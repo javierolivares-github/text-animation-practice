@@ -1,0 +1,126 @@
+/* Font -  Poppins 700*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Variables */
+:root {
+  --gray-96: hsl(0, 0%, 96%);
+  --gray-10: hsl(0, 0%, 10%);
+  --yellow-sun-62: hsl(44, 100%, 62%);
+  --esmerald-57: hsl(147, 63%, 57%);
+  --fucsia-57: hsl(350, 82%, 57%);
+}
+
+/* Center project*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--yellow-sun-62);
+}
+
+/* (1) - Add style to h1 */
+h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  width: 90vw;
+  font-size: 16vw;
+  line-height: 16vw;
+  color: var(--gray-10);
+}
+
+/* (3) - Give iniitial state to the spans*/
+h1 span {
+  opacity: 0;
+  animation: fade 300ms ease-out forwards;
+}
+
+/* (4) - Add delay to each span */
+h1 span:nth-of-type(1) {
+  animation-delay: 1.5s;
+}
+
+h1 span:nth-of-type(2) {
+  animation-delay: 2.5s;
+}
+
+h1 span:nth-of-type(3) {
+  animation-delay: 3.5s;
+}
+
+/* (2) - Create a fade animation */
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+/* (6) - Make text full responsive */
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 14vw;
+    line-height: 14vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    background: var(--esmerald-57);
+  }
+
+  h1 {
+    gap: 40px;
+    width: 86vw;
+    font-size: 12vw;
+    line-height: 12vw;
+  }
+
+  h1 span:nth-child(1) {
+    align-self: flex-start;
+  }
+
+  h1 span:nth-child(2) {
+    align-self: center;
+  }
+
+  h1 span:nth-child(3) {
+    align-self: flex-end;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background: var(--fucsia-57);
+  }
+
+  h1 {
+    gap: 44px;
+    width: 80vw;
+    font-size: 10vw;
+    line-height: 10vw;
+    color: var(--gray-96);
+  }
+
+  h1 span:nth-child(1) {
+    align-self: flex-start;
+  }
+
+  h1 span:nth-child(2) {
+    align-self: center;
+  }
+
+  h1 span:nth-child(3) {
+    align-self: flex-end;
+  }
+}
